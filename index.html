@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SUKBIT</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+--beige:#f6efe7;
+--sand:#d9c9b5;
+--brown:#9b846a;
+--dark:#4a3a2a;
+--mid:#b7a28b;
+}
+
+body{
+font-family:'Montserrat',sans-serif;
+background:var(--beige);
+color:var(--dark);
+}
+
+/* HEADER */
+header{
+background:var(--brown);
+padding:18px 60px;
+}
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+.logo{
+font-family:serif;
+font-size:34px;
+letter-spacing:3px;
+color:#fff;
+}
+.nav-links{
+list-style:none;
+display:flex;
+gap:36px;
+}
+.nav-links a{
+color:#fff;
+text-decoration:none;
+font-size:13px;
+letter-spacing:1px;
+}
+.nav-icons span{
+margin-left:18px;
+font-size:18px;
+color:#fff;
+cursor:pointer;
+}
+
+/* HERO */
+.hero{
+height:78vh;
+background:#cdbba4;
+position:relative;
+display:flex;
+align-items:flex-end;
+justify-content:center;
+padding-bottom:80px;
+}
+.hero::after{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.25);
+}
+.hero-bags{
+position:absolute;
+top:60px;
+left:0;
+right:0;
+display:flex;
+justify-content:space-evenly;
+z-index:1;
+}
+.bag{
+width:180px;
+height:260px;
+background:#7d6a55;
+border-radius:0 0 90px 90px;
+}
+.hero-content{
+position:relative;
+z-index:2;
+text-align:center;
+color:#fff;
+}
+.hero-content p{
+letter-spacing:2px;
+margin-bottom:10px;
+}
+.hero-content h1{
+font-family:serif;
+font-size:120px;
+letter-spacing:6px;
+}
+
+/* FONT INFO */
+.font-info{
+padding:40px;
+text-align:center;
+}
+.font-info h2{
+font-family:serif;
+letter-spacing:2px;
+}
+.font-info p{
+margin-top:8px;
+font-size:14px;
+letter-spacing:1px;
+}
+
+/* PRODUCTS */
+.products{
+background:var(--sand);
+padding:80px 70px;
+}
+.products-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:40px;
+}
+.product{
+text-align:center;
+color:#fff;
+}
+.product-img{
+height:260px;
+background:#cfe0ee;
+margin-bottom:16px;
+}
+.product h4{
+font-size:14px;
+letter-spacing:1px;
+}
+.product p{
+font-size:12px;
+opacity:.9;
+}
+.product span{
+display:block;
+margin-top:6px;
+font-size:14px;
+}
+
+/* FEATURES */
+.features{
+padding:80px;
+text-align:center;
+}
+.features h2{
+font-family:serif;
+font-size:34px;
+margin-bottom:50px;
+}
+.features-row{
+display:flex;
+justify-content:center;
+gap:90px;
+}
+.features-row h3{
+letter-spacing:1px;
+font-size:16px;
+}
+.features-desc{
+margin-top:40px;
+font-size:14px;
+}
+
+/* CATEGORIES */
+.categories{
+background:var(--sand);
+padding:80px;
+display:flex;
+gap:40px;
+}
+.categories-left{
+display:flex;
+align-items:center;
+gap:20px;
+}
+.categories-left h2{
+writing-mode:vertical-rl;
+transform:rotate(180deg);
+font-family:serif;
+font-size:32px;
+}
+.categories-left p{
+writing-mode:vertical-rl;
+transform:rotate(180deg);
+font-size:14px;
+}
+.categories-images{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:30px;
+flex:1;
+}
+.cat-img{
+height:340px;
+background:#cfe0ee;
+border:8px solid var(--brown);
+}
+
+/* CUSTOMIZATION */
+.custom{
+height:420px;
+background:var(--brown);
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+.custom::before{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.35);
+}
+.custom-content{
+position:relative;
+color:#fff;
+text-align:center;
+}
+.custom-content h2{
+font-family:serif;
+font-size:42px;
+}
+.custom-content p{
+margin:12px 0 26px;
+}
+.custom-content button{
+padding:14px 38px;
+border:none;
+border-radius:30px;
+font-size:13px;
+letter-spacing:1px;
+cursor:pointer;
+}
+
+/* REVIEWS */
+.reviews{
+padding:80px;
+text-align:center;
+}
+.reviews h2{
+font-family:serif;
+font-size:40px;
+margin-bottom:50px;
+}
+.review-box{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:40px;
+}
+.review{
+background:var(--brown);
+color:#fff;
+padding:50px;
+border-radius:18px;
+width:420px;
+}
+.avatar{
+width:70px;
+height:70px;
+background:#eee;
+border-radius:50%;
+margin:0 auto 20px;
+}
+.dots{
+margin-top:30px;
+}
+.dots span{
+display:inline-block;
+width:10px;
+height:10px;
+background:#cbb8a0;
+border-radius:50%;
+margin:0 4px;
+}
+.dots span.active{
+background:#6d5945;
+}
+
+/* INSTAGRAM */
+.instagram{
+background:var(--sand);
+padding:80px;
+text-align:center;
+}
+.instagram h2{
+font-family:serif;
+font-size:36px;
+}
+.instagram p{
+margin-top:8px;
+}
+.ig-grid{
+margin-top:40px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+.ig{
+height:220px;
+background:#b7a28b;
+}
+
+/* FOOTER */
+footer{
+background:#5a4a3a;
+color:#e6d7c5;
+padding:70px;
+}
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:40px;
+}
+footer h4{
+color:#fff;
+font-size:13px;
+margin-bottom:16px;
+}
+footer li,footer p{
+font-size:12px;
+margin-bottom:10px;
+list-style:none;
+}
+input{
+width:100%;
+padding:10px;
+border:none;
+background:#6f5b48;
+color:#fff;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+<div class="logo">SUKBIT</div>
+<ul class="nav-links">
+<li><a href="#">SHOP NOW</a></li>
+<li><a href="#">MY SUKBIT</a></li>
+<li><a href="#">MORE INFO</a></li>
+</ul>
+<div class="nav-icons">
+<span>🔍</span><span>👤</span><span>🛒</span>
+</div>
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-bags">
+<div class="bag"></div><div class="bag"></div><div class="bag"></div><div class="bag"></div>
+</div>
+<div class="hero-content">
+<p>Lightweight, Functional and Versatile</p>
+<h1>SUKBIT</h1>
+</div>
+</section>
+
+<section class="font-info">
+<h2>SUKBIT (ITC Benguiat Condensed)</h2>
+<p>Description (Montserrat)</p>
+</section>
+
+<section class="products">
+<div class="products-grid">
+<div class="product"><div class="product-img"></div><h4>NAME</h4><p>DESCRIPTION</p><span>PRICE</span></div>
+<div class="product"><div class="product-img"></div><h4>NAME</h4><p>DESCRIPTION</p><span>PRICE</span></div>
+<div class="product"><div class="product-img"></div><h4>NAME</h4><p>DESCRIPTION</p><span>PRICE</span></div>
+<div class="product"><div class="product-img"></div><h4>NAME</h4><p>DESCRIPTION</p><span>PRICE</span></div>
+</div>
+</section>
+
+<section class="features">
+<h2>Features of the Product</h2>
+<div class="features-row">
+<h3>LIGHTWEIGHT</h3>
+<h3>FUNCTIONAL</h3>
+<h3>VERSATILE</h3>
+</div>
+<p class="features-desc">DESCRIPTION</p>
+</section>
+
+<section class="categories">
+<div class="categories-left">
+<h2>CATEGORIES</h2>
+<p>DESCRIPTION / LIST</p>
+</div>
+<div class="categories-images">
+<div class="cat-img"></div>
+<div class="cat-img"></div>
+</div>
+</section>
+
+<section class="custom">
+<div class="custom-content">
+<h2>Customization Option</h2>
+<p>description</p>
+<button>Customize My Sukbit</button>
+</div>
+</section>
+
+<section class="reviews">
+<h2>Reviews</h2>
+<div class="review-box">
+<div class="review">
+<div class="avatar"></div>
+<p>name</p>
+<hr>
+<hr>
+</div>
+</div>
+<div class="dots">
+<span></span><span class="active"></span><span></span>
+</div>
+</section>
+
+<section class="instagram">
+<h2>Follow us on Instagram</h2>
+<p>@sukbitph</p>
+<div class="ig-grid">
+<div class="ig"></div><div class="ig"></div><div class="ig"></div><div class="ig"></div>
+</div>
+</section>
+
+<footer>
+<div class="footer-grid">
+<div>
+<h4>Quick Links</h4>
+<ul>
+<li>Search our Website</li>
+<li>About Us</li>
+<li>FAQ</li>
+<li>Terms of Service</li>
+</ul>
+</div>
+<div>
+<h4>Contact Us</h4>
+<p>shop@sukbitph.com</p>
+<p>(63) 091234567</p>
+</div>
+<div>
+<h4>Payment Options</h4>
+<p>GCash</p><p>BDO</p><p>BPI</p><p>PayPal</p>
+</div>
+<div>
+<h4>Subscribe</h4>
+<input placeholder="Email">
+</div>
+</div>
+</footer>
+
+</body>
+</html>
